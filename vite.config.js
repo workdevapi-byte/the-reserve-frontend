@@ -9,8 +9,10 @@ export default defineConfig({
       '/api': {
         target: 'https://workdevapi-byte-the-reserve-backend-pezh56wn4.vercel.app',
         changeOrigin: true,
+        secure: true,
       },
     },
   },
 });
+
 
