@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard';
 import AuthPage from './pages/AuthPage';
 
 // Note: Replace with actual Client ID or existing environment variable
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "541235337776-vqoumg4chl4arhsqqrjbkvtmuaqan1h8.apps.googleusercontent.com";
 
 function App() {
   return (
@@ -31,3 +31,4 @@ function App() {
 }
 
 export default App;
+
