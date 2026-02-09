@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://workdevapi-byte-the-reserve-backend.vercel.app/',
+  baseURL: import.meta.env.VITE_API_URL || 'https://workdevapi-byte-the-reserve-backend.vercel.app/api',
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -49,4 +49,5 @@ export const insightsApi = {
 };
 
 export default api;
+
 
