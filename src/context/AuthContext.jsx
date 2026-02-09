@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (email, password) => {
-        const { data } = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/login`, { email, password });
+        const { data } = await axios.post(`${import.meta.env.VITE_API_URL || 'https://workdevapi-byte-the-reserve-backend.vercel.app'}/api/auth/login`, { email, password });
         localStorage.setItem('userInfo', JSON.stringify(data));
         setUser(data);
         return data;
@@ -24,19 +24,19 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (name, email, password) => {
         // First step: Trigger OTP
-        const { data } = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/register`, { name, email, password });
+        const { data } = await axios.post(`${import.meta.env.VITE_API_URL || 'https://workdevapi-byte-the-reserve-backend.vercel.app'}/api/auth/register`, { name, email, password });
         return data;
     };
 
     const verifyOtp = async (email, otp) => {
-        const { data } = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/verify-otp`, { email, otp });
+        const { data } = await axios.post(`${import.meta.env.VITE_API_URL || 'https://workdevapi-byte-the-reserve-backend.vercel.app'}/api/auth/verify-otp`, { email, otp });
         localStorage.setItem('userInfo', JSON.stringify(data));
         setUser(data);
         return data;
     };
 
     const googleLogin = async (idToken) => {
-        const { data } = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/google`, { idToken });
+        const { data } = await axios.post(`${import.meta.env.VITE_API_URL || 'https://workdevapi-byte-the-reserve-backend.vercel.app'}/api/auth/google`, { idToken });
         localStorage.setItem('userInfo', JSON.stringify(data));
         setUser(data);
         return data;
@@ -55,3 +55,4 @@ export const AuthProvider = ({ children }) => {
 };
 
 export default AuthContext;
+
