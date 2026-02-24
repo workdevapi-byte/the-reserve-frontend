@@ -1,0 +1,80 @@
+.toggleContainer {
+    width: 68px;
+    height: 34px;
+    border-radius: 17px;
+    padding: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark {
+    background-color: #0d1b2a;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.light {
+    background-color: #fef3c7;
+    box-shadow: inset 0 2px 4px rgba(251, 191, 36, 0.2);
+}
+
+.slider {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), background-color 0.4s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.dark .slider {
+    transform: translateX(34px);
+    background-color: #3b82f6;
+}
+
+.light .slider {
+    transform: translateX(0);
+    background-color: #fbbf24;
+}
+
+.iconContainer {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.icon {
+    display: block;
+    line-height: 1;
+}
+
+/* Subtle background glowing elements for added style */
+.toggleContainer::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    pointer-events: none;
+    background: radial-gradient(circle at center, white, transparent);
+    transition: transform 0.4s ease;
+}
+
+.dark::before {
+    transform: translateX(10px);
+}
+
+.light::before {
+    transform: translateX(-10px);
+}
