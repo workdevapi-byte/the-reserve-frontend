@@ -7,7 +7,7 @@ export default defineConfig({
     server: {
         proxy: {
             '/api': {
-                target: 'https://workdevapi-byte-the-reserve-backend-od0nf770o.vercel.app',
+                target: 'https://reserve-backend.vercel.app',
                 changeOrigin: true,
             },
         },
